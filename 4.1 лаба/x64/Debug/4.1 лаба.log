@@ -1,0 +1,4 @@
+﻿  Word.cpp
+C:\Users\admin\Desktop\C++\с плюс плюс 3\4.1 лаба\4.1 лаба\Word.cpp(16,15): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\admin\Desktop\C++\с плюс плюс 3\4.1 лаба\4.1 лаба\Word.cpp(79,15): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  4.1 лаба.vcxproj -> C:\Users\admin\Desktop\C++\с плюс плюс 3\4.1 лаба\x64\Debug\4.1 лаба.exe
