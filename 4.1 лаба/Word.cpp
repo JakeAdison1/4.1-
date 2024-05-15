@@ -11,52 +11,46 @@ using namespace std;
 	size = 0;
 }
 
-Word::Word(char* slovo) { //конструктор с параметром
-	W = slovo;
-	size = strlen(slovo);
+ Word::Word(const char* P)// /инициализации слова заданным словом-инициализатором
 
-}
-Word::Word(int n, char p) {
-	size = n;
-	W = new char[n + 1];
-	for (int i = 0; i < n; i++) {
-		W[i] = p;
-	}
-	W[n] = '\0';
-}
-Word::Word(int n, char* p) {
-	if (n > strlen(p)) {
-		W = p;
-	}
-	else {
-		W = new char[n + 1];
-		for (int i = 0; i < n; i++) {
-			W[i] = p[i];
-		}
-		W[n] = '\0';
-	}
-}
-Word::Word(char* p, int n) {
-	if (n > strlen(p)) {
-		W = p;
-	}
-	else {
-		W = new char[n + 1];
-		for (int i = 0; i < n; i++) {
-			W[i] = p[strlen(p) - n + 1];
-		}
-		W[n] = '\0';
-	}
-}
+ {
+	 int len = strlen(P);
+
+	 W = new char[len + 1];
+
+	 for (int i = 0; i < len; i++)
+		 W[i] = P[i];
+
+	 W[len] = '\0';
+ }
+
+ Word::Word(const char S, int n)//инициализации слова заданным количеством повторов заданного символа
+ {
+	 W = new char[n + 1];
+	 for (int i = 0; i < n; i++)
+	 {
+		 W[i] = S;
+	 }
+	 W[n] = '\0';
+ }
+ Word::Word(const char* S, int n)//инициализации слова частью заданного слова-инициализатора (первые n символов)
+ {
+	 W = new char[n + 1];
+	 for (int i = 0; i < n; i++)
+	 {
+		 W[i] = S[i];
+	 }
+	 W[n] = '\0';
+ }
 
 Word::Word(const Word& slovo) {
-	cout << "Конструктор копирования" << endl;
+	cout << "Конструктор копирования:" << endl;
 	W = slovo.W;
 	size = slovo.size;
 }
 Word::Word( Word&& slovo) noexcept
 {
-	cout << "Конструктор преермещения" << endl;
+	cout << "Конструктор перемещения:" << endl;
 	size = slovo.size;
 	W = slovo.W;
 	slovo.W = nullptr;
